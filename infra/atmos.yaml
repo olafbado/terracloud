@@ -11,3 +11,6 @@ stacks:
     - "defaults/**/*"
   included_paths:
     - "/**/*"
+
+workflows:
+  base_path: "stacks/workflows"
