@@ -1,0 +1,13 @@
+vars:
+  stage: dev
+
+import:
+  - defaults/dev
+  - defaults/s3
+
+components:
+  terraform:
+    s3:
+      vars:
+        bucket_name: "olafherebucket"
+        stage: "dev"
