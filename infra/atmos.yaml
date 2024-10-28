@@ -14,3 +14,12 @@ stacks:
 
 workflows:
   base_path: "stacks/workflows"
+
+templates:
+  settings:
+    enabled: true
+    gomplate:
+      enabled: true
+      datasources:
+        config:
+          url: "./.env"
