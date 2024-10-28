@@ -1,0 +1,5 @@
+terraform:
+  providers:
+    aws:
+      profile: '{{ (datasource "config").AWS_PROFILE }}'
+      region: '{{ (datasource "config").AWS_REGION }}'

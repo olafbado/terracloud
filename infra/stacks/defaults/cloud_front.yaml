@@ -1,0 +1,8 @@
+components:
+  terraform:
+    cdn:
+      metadata:
+        component: cloud_front
+      vars:
+        index_document: "index.html"
+        profile: '{{ (datasource "config").AWS_PROFILE }}'

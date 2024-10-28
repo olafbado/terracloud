@@ -1,0 +1,8 @@
+components:
+  terraform:
+    s3:
+      metadata:
+        component: s3
+      vars:
+        index_document: "index.html"
+        error_document: "error.html"
