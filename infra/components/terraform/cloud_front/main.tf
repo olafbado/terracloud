@@ -20,7 +20,6 @@ module "cdn" {
   stage                  = var.stage
   name                   = var.name
   aliases                = ["${var.domain_name}", "www.${var.domain_name}"]
-  parent_zone_name       = var.zone_name
   origin_domain_name     = "${var.stage}-${var.bucket_name}.s3-website.${data.aws_region.current.name}.amazonaws.com"
   origin_protocol_policy = "http-only"
 
