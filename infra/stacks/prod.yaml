@@ -1,0 +1,20 @@
+vars:
+  stage: prod
+
+import:
+  - defaults/prod
+  - defaults/cloud_front
+  - defaults/s3
+
+components:
+  terraform:
+    s3:
+      vars:
+        bucket_name: "olafherebucket"
+        stage: "prod"
+    cdn:
+      vars:
+        name: "olafhere-cloud-front"
+        bucket_name: "olafherebucket"
+        domain_name: "olafhere.click"
+        stage: "prod"
