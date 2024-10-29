@@ -6,7 +6,6 @@ workflows:
     stack: dev
     steps:
       - command: terraform plan s3
-      - command: terraform plan s3v2
 
   plan-all-prod:
     stack: prod
