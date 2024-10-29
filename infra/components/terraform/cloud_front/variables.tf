@@ -16,3 +16,6 @@ variable "index_document" {
 variable "profile" {
   type = string
 }
+variable "zone_name" {
+  type = string
+}
