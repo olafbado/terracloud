@@ -17,4 +17,5 @@ components:
         name: "olafhere-cloud-front"
         bucket_name: "olafherebucket"
         domain_name: "olafhere.click"
+        zone_name: "olafhere.click"
         stage: "prod"
