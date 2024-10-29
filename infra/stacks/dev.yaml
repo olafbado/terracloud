@@ -4,10 +4,22 @@ vars:
 import:
   - defaults/dev
   - defaults/s3
+  - defaults/route53
+  - defaults/api_gateway_v1
+  - defaults/lambda
 
 components:
   terraform:
     s3:
       vars:
-        bucket_name: "olafherebucket"
+        bucket_name: "olafherebucketv2"
         stage: "dev"
+    dns:
+      vars:
+        zone_name: "olafhere.click"
+    api:
+      vars:
+        name: "api"
+        stage_name: "dev"
+        domain_name: "olafhere.click"
+        zone_name: "olafhere.click"

@@ -7,16 +7,25 @@ workflows:
     stack: dev
     steps:
       - command: terraform plan s3
+      - command: terraform plan lambda
+      - command: terraform plan dns
+      - command: terraform plan api
 
   apply-all-dev:
     stack: dev
     steps:
       - command: terraform apply s3 -auto-approve
+      - command: terraform apply lambda -auto-approve
+      - command: terraform apply dns -auto-approve
+      - command: terraform apply api -auto-approve
 
   destroy-all-dev:
     stack: dev
     steps:
       - command: terraform destroy s3 -auto-approve
+      - command: terraform destroy lambda -auto-approve
+      - command: terraform destroy dns -auto-approve
+      - command: terraform destroy api -auto-approve
 
   ### PROD
   plan-all-prod:
