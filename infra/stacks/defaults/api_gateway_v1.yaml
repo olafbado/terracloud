@@ -1,0 +1,5 @@
+components:
+  terraform:
+    api:
+      metadata:
+        component: api_gateway_v1
