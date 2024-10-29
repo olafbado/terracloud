@@ -2,36 +2,34 @@ name: Workflows for TerraCloud
 description: Atmos workflows for managing TerraCloud
 
 workflows:
+  ### DEV
   plan-all-dev:
     stack: dev
     steps:
       - command: terraform plan s3
-
-  plan-all-prod:
-    stack: prod
-    steps:
-      - command: terraform plan s3
-      - command: terraform plan cdn
 
   apply-all-dev:
     stack: dev
     steps:
       - command: terraform apply s3 -auto-approve
 
-  apply-all-prod:
-    stack: prod
-    steps:
-      - command: terraform apply s3 -auto-approve
-      - command: terraform apply cdn -auto-approve
-
-  destroy-all-prod:
-    stack: prod
-    steps:
-      - command: terraform destroy s3 -auto-approve
-      - command: terraform destroy cdn -auto-approve
-
   destroy-all-dev:
     stack: dev
     steps:
       - command: terraform destroy s3 -auto-approve
-      - command: terraform destroy s3v2 -auto-approve
+
+  ### PROD
+  plan-all-prod:
+    stack: prod
+    steps:
+      - command: terraform plan s3_cdn
+
+  apply-all-prod:
+    stack: prod
+    steps:
+      - command: terraform apply s3_cdn -auto-approve
+
+  destroy-all-prod:
+    stack: prod
+    steps:
+      - command: terraform destroy s3_cdn -auto-approve

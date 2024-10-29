@@ -1,0 +1,9 @@
+components:
+  terraform:
+    s3_cdn:
+      metadata:
+        component: s3_cdn
+      vars:
+        index_document: "index.html"
+        error_document: "error.html"
+        profile: '{{ (datasource "config").AWS_PROFILE }}'
